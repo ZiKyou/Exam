@@ -14,8 +14,8 @@ struct delo
     string prior;
     string ops;
 };
-
-void showCases(delo* d, int size)
+//везде где есть переменная trash она используется для хранение мусора
+void showCases(delo* d, int size) // показывает список дел, путём считывания из файла
 {
     int iName = 0;
     int iPrior = 0;
@@ -53,7 +53,7 @@ void showCases(delo* d, int size)
     out.close();
 }
 
-void addCase(delo* d, int constSize)
+void addCase(delo* d, int constSize) // добавляет дело 
 {
     int userInput = 0;
     string trash;
@@ -78,7 +78,7 @@ void addCase(delo* d, int constSize)
     out.close();
 }
 
-int sizeDelo(delo* d, int size)
+int sizeDelo(delo* d, int size) //подсчитывает количевство дел
 {
     for (int i = 0; i < size; i++)
     {
@@ -90,7 +90,7 @@ int sizeDelo(delo* d, int size)
     return 0;
 }
 
-void deleteCase(delo* d, int size)
+void deleteCase(delo* d, int size) //удаляет дело по названию 
 {
     string userInput;
     int indexDeleteName;
@@ -124,7 +124,7 @@ void deleteCase(delo* d, int size)
     }
     out.close();
 }
-void changeCase(delo * d, int size)
+void changeCase(delo * d, int size) //позволяет изменить дело путём поиска по названию, и полностью перезаписью дела
 {
     string userInput;
     string trash;
